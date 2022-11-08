@@ -1,6 +1,6 @@
-const BOOK_ADDED = 'BOOK_ADDED';
-const BOOK_DELETED = 'BOOK_DELETED';
-const STATUS_CHECKED = 'STATUS_CHECKED';
+const BOOK_ADDED = 'redux/books/BOOK_ADDED';
+const BOOK_DELETED = 'redux/books/BOOK_DELETED';
+const STATUS_CHECKED = 'redux/categories/STATUS_CHECKED';
 
 export default {
   BOOK_ADDED,
