@@ -24,15 +24,10 @@ const Books = () => {
   };
 
   return (
-
     <div className="container">
       <ul>
         {books.map((book) => (
-          <Book
-            key={book.id}
-            book={book}
-            deleteBookProp={delBook}
-          />
+          <Book key={book.id} book={book} deleteBookProp={delBook} />
         ))}
       </ul>
       <InputBook addBookProp={addBookItem} />
