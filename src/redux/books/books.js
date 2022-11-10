@@ -1,47 +1,59 @@
+/* eslint-disable no-param-reassign */
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import axios from 'axios';
 import types from '../types/types';
 
+const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/U6gF2N1pkuPRjLdIu34R/books';
+
 const initialState = {
-  bookList: [
-    {
-      id: 1,
-      title: 'A song of ice and fire',
-      author: 'R R Martin',
-    },
-    {
-      id: 2,
-      title: 'Oliver Twist',
-      author: 'Charles Dickens',
-    },
-    {
-      id: 3,
-      title: 'Weep not child',
-      author: 'Nyungi Wa Thiongo',
-    },
-  ],
+  isLoading: true,
+  bookList: {},
 };
 
-export const deleteBook = (index) => ({
-  type: types.BOOK_DELETED,
-  index,
+export const getBooks = createAsyncThunk(
+  types.BOOKS_FETCHED,
+  async (thunkAPI) => {
+    try {
+      const response = await axios.get(url);
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.response.data);
+    }
+  },
+);
+
+export const addBook = createAsyncThunk(
+  types.BOOK_ADDED,
+  async (payload, thunkAPI) => {
+    await axios.post(url, payload);
+    return thunkAPI.dispatch(getBooks());
+  },
+);
+
+export const deleteBook = createAsyncThunk(
+  types.BOOK_DELETED,
+  async (payload, thunkAPI) => {
+    await axios.delete(`${url}/${payload}`);
+    return thunkAPI.dispatch(getBooks());
+  },
+);
+
+const bookSlice = createSlice({
+  name: 'bookSl',
+  initialState,
+  reducers: {},
+  extraReducers: {
+    [getBooks.pending]: (state) => {
+      state.isLoading = true;
+    },
+    [getBooks.fulfilled]: (state, action) => {
+      state.isLoading = false;
+      Object.assign(state.bookList, action.payload);
+    },
+    [getBooks.rejected]: (state) => {
+      state.isLoading = true;
+    },
+  },
 });
 
-export const addBook = (bookDetail) => ({
-  type: types.BOOK_ADDED,
-  bookDetail,
-});
-
-export default function booksReducer(state = initialState, action) {
-  switch (action.type) {
-    case types.BOOK_ADDED:
-      return { ...state, bookList: [...state.bookList, action.bookDetail] };
-    case types.BOOK_DELETED:
-      return {
-        ...state,
-        bookList: [
-          ...state.bookList.filter((book) => book.id !== action.index.id),
-        ],
-      };
-    default:
-      return state;
-  }
-}
+export default bookSlice.reducer;
