@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Book = (props) => {
-  const { book } = props;
-  const { id, title, author } = book;
+  const { book, id } = props;
+  const { title, author } = book;
   const { deleteBookProp } = props;
 
   return (
@@ -20,6 +20,8 @@ const Book = (props) => {
 export default Book;
 
 Book.propTypes = {
-  book: PropTypes.isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
+  book: PropTypes.object.isRequired,
+  id: PropTypes.string.isRequired,
   deleteBookProp: PropTypes.func.isRequired,
 };
