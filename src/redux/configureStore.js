@@ -1,9 +1,9 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import booksReducer from './books/books';
+import bookSlice from './books/books';
 import categoryReducer from './categories/categories';
 
 const reducer = combineReducers({
-  books: booksReducer,
+  bookSl: bookSlice,
   category: categoryReducer,
 });
 
