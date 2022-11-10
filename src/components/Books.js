@@ -7,7 +7,6 @@ import { getBooks, addBook, deleteBook } from '../redux/books/books';
 
 const Books = () => {
   const books = useSelector((state) => state.bookSl);
-  console.log(books.bookList);
   const dispatch = useDispatch();
 
   useEffect(() => {
