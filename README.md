@@ -6,6 +6,7 @@ The Bookstore is a web application created with using MVP. The app  displays a l
 
 - React
 - Redux
+- Redux - Thunk
 - Javascript Events
 - React life cycle methods
 - Linters
@@ -28,6 +29,7 @@ run the following commands in your terminal
 
 ### Local deployment
 
+- npm install
 - npm run start - To run the application locally
 - Run the brower via localhost:3000
 - npm run build - To build the application locally

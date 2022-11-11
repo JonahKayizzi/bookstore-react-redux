@@ -1,32 +1,37 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import { useSelector, shallowEqual, useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import Book from './Book';
 import InputBook from './InputBook';
-import { addBook, deleteBook } from '../redux/books/books';
+import { getBooks, addBook, deleteBook } from '../redux/books/books';
 
 const Books = () => {
-  const availableBooks = useSelector((state) => state.books, shallowEqual);
+  const books = useSelector((state) => state.bookSl);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getBooks());
+  }, []);
 
   const addBookItem = (title, author) => {
     const newBook = {
-      id: uuidv4(),
+      item_id: uuidv4(),
       title,
       author,
+      category: 'Fiction',
     };
     dispatch(addBook(newBook));
   };
 
   const delBook = (idToDel) => {
-    dispatch(deleteBook({ id: idToDel }));
+    dispatch(deleteBook(idToDel));
   };
 
   return (
     <div className="container">
       <ul>
-        {availableBooks.bookList.map((book) => (
-          <Book key={book.id} book={book} deleteBookProp={delBook} />
+        {Object.keys(books.bookList).map((book) => (
+          <Book key={book} id={book} book={books.bookList[book][0]} deleteBookProp={delBook} />
         ))}
       </ul>
       <InputBook addBookProp={addBookItem} />
