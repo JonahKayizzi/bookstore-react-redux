@@ -11,6 +11,7 @@ const Books = () => {
 
   useEffect(() => {
     dispatch(getBooks());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const addBookItem = (title, author) => {
