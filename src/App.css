@@ -14,6 +14,11 @@ p {
   margin: 0;
 }
 
+li a {
+  text-decoration: none;
+  color: #a6a6a6;
+}
+
 a:hover,
 button:hover {
   cursor: pointer;
@@ -34,11 +39,6 @@ nav h1 {
 nav ul {
   display: flex;
   gap: 2em;
-}
-
-li a {
-  text-decoration: none;
-  color: #a6a6a6;
 }
 
 .active {

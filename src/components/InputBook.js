@@ -29,9 +29,10 @@ const InputBook = (props) => {
 
   return (
     <form onSubmit={handleSubmit} className="form-container">
+      <p>ADD NEW BOOK</p>
       <input
         type="text"
-        className="input-text"
+        className="input-text title-input"
         placeholder="Add Book..."
         value={inputText.title}
         onChange={onChange}
@@ -39,14 +40,14 @@ const InputBook = (props) => {
       />
       <input
         type="text"
-        className="input-text"
+        className="input-text author-input"
         placeholder="Add Author..."
         value={inputText.author}
         onChange={onChange}
         name="author"
       />
-      <button type="submit" className="input-submit">
-        Submit
+      <button type="submit" className="input-submit btn-chapter">
+        ADD BOOK
       </button>
     </form>
   );
