@@ -1,3 +1,203 @@
 .App {
   text-align: center;
 }
+
+ul {
+  list-style: none;
+}
+
+button {
+  border: none;
+}
+
+p {
+  margin: 0;
+}
+
+li a {
+  text-decoration: none;
+  color: #a6a6a6;
+}
+
+a:hover,
+button:hover {
+  cursor: pointer;
+}
+
+nav {
+  background-color: #fff;
+  padding: 0 10%;
+  border: 1px solid #e8e8e8;
+}
+
+nav h1 {
+  color: #0290ff;
+  font-size: 1.875rem;
+  font-weight: bold;
+}
+
+nav ul {
+  display: flex;
+  gap: 2em;
+}
+
+.active {
+  color: #121212;
+}
+
+.container {
+  background-color: #fafafa;
+  padding: 1em 10%;
+  box-shadow: 7px 14px 10px 10px #e7e7e8;
+}
+
+.book-container {
+  padding: 0;
+  gap: 1em;
+}
+
+.book-item {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  border: 1px solid #e8e8e8;
+  border-radius: 4px;
+}
+
+.book-item > * {
+  width: 33%;
+}
+
+.category {
+  font-weight: bold;
+  opacity: 0.5;
+}
+
+.category,
+.author {
+  font-size: 0.875rem;
+}
+
+.title {
+  font-size: 1.375rem;
+  font-weight: bold;
+  letter-spacing: -0.2px;
+}
+
+.author,
+.btn-book {
+  font-weight: 300;
+  color: #4386bf;
+}
+
+.btn-book {
+  background-color: #fff;
+  padding-left: 0;
+  margin-right: 0.7em;
+}
+
+.book-buttons {
+  justify-content: start;
+  padding: 0;
+  margin-top: 1em;
+  gap: 1em;
+}
+
+.book-button {
+  border-right: 1px solid #e8e8e8;
+}
+
+.btn-chapter {
+  border-radius: 3px;
+  background-color: #0290ff;
+  color: #fff;
+  font-size: 0.813rem;
+  letter-spacing: 0.5px;
+  text-align: center;
+  padding: 0.438rem 1.188rem 0.5rem 1.375rem;
+  width: 11.5rem;
+  height: 2.063rem;
+  margin-top: 1.5em;
+}
+
+.cirPro {
+  border-right: solid 1px #e8e8e8;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+}
+
+.chap-1 {
+  color: #121212;
+  opacity: 0.5;
+  font-size: 0.813rem;
+}
+
+.chap-2 {
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: -0.4px;
+  color: #121212;
+  margin-top: 0.5em;
+}
+
+.form-container {
+  border-top: solid 1px #e8e8e8;
+  padding: 1.5em 0 10em 0;
+  margin-top: 1.5em;
+}
+
+.form-container p {
+  color: #888;
+  font-size: 1.25rem;
+  font-weight: bold;
+  letter-spacing: -0.18px;
+}
+
+.input-text {
+  border: solid 1px #e8e8e8;
+  padding: 0 0 0.2rem 1.063rem;
+  border-radius: 4px;
+  height: 2.813rem;
+  margin: 1.188rem 2.125rem 0 0;
+}
+
+.title-input {
+  width: 50%;
+}
+
+.author-input {
+  width: 20%;
+}
+
+.input-submit {
+  width: 15%;
+  height: 2.813rem;
+  font-weight: bold;
+}
+
+.progress {
+  padding-left: 3em;
+}
+
+.perc {
+  color: #121212;
+  font-size: 2rem;
+}
+
+.completed {
+  color: #121212;
+  opacity: 0.5;
+  font-size: 0.875rem;
+}
+
+.oval {
+  border-image-source: linear-gradient(to bottom, var(--medium-blue), #379cf6);
+  width: 3.25rem;
+  height: 3.25rem;
+  border: 5px solid #379cf6;
+  border-radius: 50%;
+  color: #fff;
+}

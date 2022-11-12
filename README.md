@@ -13,6 +13,7 @@ The Bookstore is a web application created with using MVP. The app  displays a l
 - npm
 - Gitflow
 - Hooks, States, Props
+- Zeplin
 
 
 ## Getting Started

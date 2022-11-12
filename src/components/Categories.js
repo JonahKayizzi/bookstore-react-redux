@@ -11,7 +11,7 @@ const Categories = () => {
   return (
     <>
       <p>{categoryStatus.categories}</p>
-      <button type="button" onClick={checkStatus}>
+      <button className="btn-chapter" type="button" onClick={checkStatus}>
         Check Status
       </button>
     </>

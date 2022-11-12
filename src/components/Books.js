@@ -28,8 +28,8 @@ const Books = () => {
   };
 
   return (
-    <div className="container">
-      <ul>
+    <div className="container flex-col">
+      <ul className="book-container flex-col">
         {Object.keys(books.bookList).map((book) => (
           <Book key={book} id={book} book={books.bookList[book][0]} deleteBookProp={delBook} />
         ))}

@@ -25,3 +25,20 @@ code {
     'Courier New',
     monospace;
 }
+
+#root {
+  background-color: #f5f6fa;
+  display: flex;
+  flex-direction: column;
+  padding: 3em;
+}
+
+.flex-row {
+  display: flex;
+  align-items: center;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
